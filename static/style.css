@@ -1,0 +1,65 @@
+.swal2-popup {
+    width: 50vw !important; /* Ancho del 90% de la ventana gráfica */
+    font-size: 1.0em; /* Tamaño del texto basado en la fuente base */
+  }
+
+  .swal2-actions {
+    display: flex;
+    justify-content: center;
+  }
+
+  .swal2-confirm {
+    width: 100%;
+  }
+
+  #text1{
+    padding-top: 2.3rem !important;
+    
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    background: linear-gradient(to right,#2441ab71, #e71b1b62),url();
+    
+    background-size: cover;
+    font-family: "Lato", sans-serif;
+    font-weight: 800;
+    line-height: 1.7;
+    padding: 1.875rem;
+}
+.header{
+    height: 20vh;
+    background: linear-gradient(to right, #4CAF50, #8BC34A);
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+}
+
+.heading-primary{
+    
+    font-weight: 1000;
+    font-size: 75px;
+    color: rgb(17, 64, 216);
+    text-transform: uppercase;
+    letter-spacing: 1.0rem;
+}
+
+.heading-primary span {
+    background-image: url('');
+    background-size: cover;
+    background-position: center;
+    /* color: transparent;  Oculta el texto para que solo se muestre la imagen de fondo */
+    /* -webkit-background-clip: text;  Hace que la imagen de fondo solo se muestre dentro del texto */
+    background-clip: text;
+}
+
+@media only screen and (max-width: 37.5rem){
+    .heading-primary{
+    
+        font-weight: 1000;
+        letter-spacing: 0.2rem;
+    }
+}

@@ -1,0 +1,16 @@
+# Framework principal
+Django>=3.2,<5.0
+
+# Procesamiento de imágenes
+opencv-python>=4.7.0
+numpy>=1.23.0
+Pillow>=9.0.0
+
+# Modelos de IA y procesamiento de imágenes con Pytorch
+torch>=2.0.0
+torchvision>=0.15.0
+realesrgan>=0.3.0
+basicsr>=1.4.2
+
+# Otros
+transparent-background>=1.2.4
