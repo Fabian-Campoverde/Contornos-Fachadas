@@ -57,7 +57,11 @@ def bordearDexi(imagen_cv):
 
 def comprimir(imagen):
     # Cargar imagen con OpenCV
-    img = imagen
+    if not isinstance(imagen, np.ndarray):
+        img_pil = Image.open(imagen).convert("RGB")
+        img = cv2.cvtColor(np.array(img_pil), cv2.COLOR_RGB2BGR)
+    else:
+        img = imagen
 
     # Redimensionar si es muy grande
     MAX_WIDTH = 800
@@ -73,9 +77,8 @@ def mejorarGAN(imagen_cv):
     model_path = "weights/RealESRGAN_x4plus.pth"  # Asegúrate de tener el archivo
 
     # --------- CARGAR IMAGEN ---------
-    imagen= comprimir(imagen_cv)
-    image = Image.open(imagen)
-    img_np = np.array(image)
+    img_np= comprimir(imagen_cv)
+    
 
     # --------- CONFIGURAR MODELO ---------
     model = RRDBNet(
@@ -233,8 +236,7 @@ def procesar_imagen(request):
                 cv2.imwrite(output_path, resultado)
 
             elif accion == 'mejorar_gan':
-                img_pil = Image.open(imagen).convert('RGB')
-                img_cv = cv2.cvtColor(np.array(img_pil), cv2.COLOR_RGB2BGR)
+                
                 resultado = mejorarGAN(imagen)
                 filename = f"{uuid.uuid4().hex}.jpg"
                 output_path = os.path.join(settings.MEDIA_ROOT, 'results', filename)
